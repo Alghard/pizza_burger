@@ -1,51 +1,88 @@
+.container {
+    position: relative;
+    left : 50%;
+}
 .toggle {
     position: relative;
     width: 70px;
     height: 70px;
-    background-color: rgb(1, 103, 255);
+    background-color: #ae3a33;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     border-radius: 50%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     overflow: hidden;
 }
-
-.toggle span {
+.toggle span{
     position: absolute;
-    height: 2px;
-    width: 40px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(242, 211, 160);
     border-radius: 4px;
     cursor: pointer;
     transition: 0.5s;
+    height: 4px;
 }
-
-.toggle span:nth-child(1) {
-    transform: translateY(-15px);
-    width: 25px;
-    left: 15px;
-}
-
-.toggle.toggle:hover span:nth-child(1) {
+.toggle .line{
     width: 40px;
-    transform: translateY(0px) rotate(45deg);
-    transition-delay: 0.125s;
 }
 
-.toggle span:nth-child(2) {
-    transform: translateY(15px);
-    width: 15px;
-    left: 15px;
+.toggle .dot{
+    width: 4px;
+}
+
+.toggle span:nth-child(1){
+    translate : -25px -15px;
+}
+
+.toggle span:nth-child(2){
+    translate: 5px -15px;
+}
+
+.toggle span:nth-child(3){
+    translate: -25px;
+}
+
+.toggle span:nth-child(4){
+    translate: 5px;
+}
+
+.toggle span:nth-child(5){
+    translate : -25px 15px;
+}
+
+.toggle span:nth-child(6){
+    translate : 5px 15px;
+}
+
+.toggle.toggle:hover span:nth-child(1){
+    transform: scale(1.4) translateX(15px) translateY(5px);
 }
 
 .toggle.toggle:hover span:nth-child(2) {
-    width: 40px;
-    transform: translateY(0px) rotate(315deg);
+    width: 45px;
+    transform: translateX(-15px) translateY(18px) rotate(60deg);
     transition-delay: 0.125s;
 }
 
-.toggle:hover span:nth-child(3) {
-    transform: translateX(60px);
+.toggle.toggle:hover span:nth-child(3){
+    transform: scale(1.3) translateX(20px) translateY(4px);
+}
+
+.toggle.toggle:hover span:nth-child(4){
+    width: 45px;
+    transform: translateX(7px) translateY(3px) rotate(300deg);
+}
+
+.toggle.toggle:hover span:nth-child(5){
+    background-color: black;
+    transform: scale(1.6) translateX(22px) translateY(-15px);
+}
+
+.toggle.toggle:hover span:nth-child(6){
+    height: 7px;
+    width: 46px;
+    transform: translateX(-4px) translateY(-32px);
+    border-radius: 100% 100% 50% 50%;
 }
